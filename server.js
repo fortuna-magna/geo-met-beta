@@ -11,6 +11,7 @@ const pool = new Pool({
     ssl: { rejectUnauthorized: false }
 });
 
+// Root Route
 app.get('/', (req, res) => {
     res.send('Geo-Met backend running');
 });
