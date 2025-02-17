@@ -21,22 +21,8 @@ app.get('/db-test', async (req, res) => {
         const result = await pool.query('SELECT NOW()');
         res.json({ success: true, time: result.rows[0] });
     } catch (error) {
-        res.status(500).json({ success: false, error: error.message 
-});
+        res.status(500).json({ success: false, error: error.message });
     }
-});
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
-const express = 
-require('express');
-const app = express();
-
-const PORT = process.env.PORT || 3000; // Railway will assign a port dynamically
-
-app.get('/', (req, res) => {
-    res.send('Geo-Met backend running');
 });
 
 app.listen(PORT, () => {
